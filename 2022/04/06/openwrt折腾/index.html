@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="关于软路由        硬件需求  万能的Phicomm n1                       固件        openwrt 固件F大内核编译固件                       可玩性        docker容器   DDNS.to内网穿透   可道云   Nas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openwrt折腾">
+<meta property="og:url" content="http://maimai977977.github.io/2022/04/06/openwrt%E6%8A%98%E8%85%BE/index.html">
+<meta property="og:site_name" content="偷夢的贼">
+<meta property="og:description" content="关于软路由        硬件需求  万能的Phicomm n1                       固件        openwrt 固件F大内核编译固件                       可玩性        docker容器   DDNS.to内网穿透   可道云   Nas">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-06T15:43:33.000Z">
+<meta property="article:modified_time" content="2022-04-06T15:50:58.810Z">
+<meta property="article:author" content="maimai">
+<meta property="article:tag" content="openwrt">
+<meta name="twitter:card" content="summary"><title>openwrt折腾 | 偷夢的贼</title><link ref="canonical" href="http://maimai977977.github.io/2022/04/06/openwrt%E6%8A%98%E8%85%BE/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-users"></i></span><span class="header-nav-menu-item__text">menu.友链</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/aaa/"><span class="header-nav-submenu-item__icon"><i class="fas fa-male"></i></span><span class="header-nav-submenu-item__text">menu.1</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/bbb/"><span class="header-nav-submenu-item__icon"><i class="fas fa-female"></i></span><span class="header-nav-submenu-item__text">menu.2</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">偷夢的贼</div><div class="header-banner-info__subtitle">You can't change the world, but you can change yourself</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">openwrt折腾</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-06</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-06</span></span></div></header><div class="post-body">
+        <h2 id="关于软路由"   >
+          <a href="#关于软路由" class="heading-link"><i class="fas fa-link"></i></a><a href="#关于软路由" class="headerlink" title="关于软路由"></a>关于软路由</h2>
+      <blockquote>
+<p>硬件需求 </p>
+<p>万能的<code>Phicomm n1</code></p>
+</blockquote>
+<hr>
+
+        <h2 id="固件"   >
+          <a href="#固件" class="heading-link"><i class="fas fa-link"></i></a><a href="#固件" class="headerlink" title="固件"></a>固件</h2>
+      <blockquote>
+<p>openwrt 固件<br>F大内核编译固件</p>
+</blockquote>
+<hr>
+
+        <h2 id="可玩性"   >
+          <a href="#可玩性" class="heading-link"><i class="fas fa-link"></i></a><a href="#可玩性" class="headerlink" title="可玩性"></a>可玩性</h2>
+      <blockquote>
+<p><code>docker</code>容器</p>
+</blockquote>
+<blockquote>
+<p><code>DDNS.to</code>内网穿透</p>
+</blockquote>
+<blockquote>
+<p>可道云</p>
+</blockquote>
+<blockquote>
+<p>Nas</p>
+</blockquote>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://maimai977977.github.io/tags/openwrt/">openwrt</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/06/stun/"><span class="paginator-prev__text">stun主题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BD%AF%E8%B7%AF%E7%94%B1"><span class="toc-number">1.</span> <span class="toc-text">
+          关于软路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">
+          固件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%8E%A9%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">
+          可玩性</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/bgimg/12.png" alt="avatar"></div><p class="sidebar-ov-author__text">Life is real, life is earnest</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>maimai</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
