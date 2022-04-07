@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="重构:改善既有代码的设计        本书是经典著作《重构》出版20年后的更新版。书中清晰揭示了重构的过程，解释了重构的原理和实践方式，并给出了何时以及何地应该始挖掘代码以求改善。书中给出了60多个可行的重构，每个重构都介绍了一种经过验证的代码变换手法的动机和技术。本书提出的重构准则将帮助发人员一次一小步地修改代码，从而减少了发过程中的风险。 本书适合软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="chonggou">
+<meta property="og:url" content="http://maimai977977.github.io/chonggou/index.html">
+<meta property="og:site_name" content="偷夢的贼">
+<meta property="og:description" content="重构:改善既有代码的设计        本书是经典著作《重构》出版20年后的更新版。书中清晰揭示了重构的过程，解释了重构的原理和实践方式，并给出了何时以及何地应该始挖掘代码以求改善。书中给出了60多个可行的重构，每个重构都介绍了一种经过验证的代码变换手法的动机和技术。本书提出的重构准则将帮助发人员一次一小步地修改代码，从而减少了发过程中的风险。 本书适合软件">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-07T02:22:40.000Z">
+<meta property="article:modified_time" content="2022-04-07T02:27:24.635Z">
+<meta property="article:author" content="maimai">
+<meta name="twitter:card" content="summary"><title>chonggou | 偷夢的贼</title><link ref="canonical" href="http://maimai977977.github.io/chonggou/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首 页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">日 常</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归 档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分 类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标 签</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-users"></i></span><span class="header-nav-menu-item__text">友 链</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/aaa/"><span class="header-nav-submenu-item__icon"><i class="fas fa-male"></i></span><span class="header-nav-submenu-item__text">大 佬</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/bbb/"><span class="header-nav-submenu-item__icon"><i class="fas fa-female"></i></span><span class="header-nav-submenu-item__text">大 佬</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">分 享</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/java/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">Jave</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/python/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">Python</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">书籍</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/chonggou/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">重构</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">偷夢的贼</div><div class="header-banner-info__subtitle">You can't change the world, but you can change yourself</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><div class="custompage">
+        <h2 id="重构-改善既有代码的设计"   >
+          <a href="#重构-改善既有代码的设计" class="heading-link"><i class="fas fa-link"></i></a><a href="#重构-改善既有代码的设计" class="headerlink" title="重构:改善既有代码的设计"></a>重构:改善既有代码的设计</h2>
+      <blockquote>
+<p>本书是经典著作《重构》出版20年后的更新版。书中清晰揭示了重构的过程，解释了重构的原理和实践方式，并给出了何时以及何地应该始挖掘代码以求改善。书中给出了60多个可行的重构，每个重构都介绍了一种经过验证的代码变换手法的动机和技术。本书提出的重构准则将帮助发人员一次一小步地修改代码，从而减少了发过程中的风险。 本书适合软件发人员、项目管理人员等阅读，也可作为高等院校计算机及相关专业师生的参考读物</p>
+</blockquote>
+<hr>
+<p><code>【推荐语】</code></p>
+<ol>
+<li>软件发大师的不朽经典</li>
+<li>生动阐述重构原理和具体做法</li>
+<li>普通程序员阶到编程高手必须修炼的秘笈 重构，一言以蔽之，是在不改变外部行为的前提下，有条不紊地改善代码。20 多年前，正是《重构：改善既有代码的设计》第1 版的出版，使重构终于从编程高手们的小圈子走出，成为众多普通程序员日常发工作中不可或缺的一部分。如今，Martin Fowler 的《重构：改善既有代码的设计》一书已经成为全球有经验的程序员手中的利器，既可用来改善既有代码的设计、提升软件的可维护性，又可用于使既有代码更易理解、焕发出新的活力。 这本备受关注的第2 版在第1 版的基础上做了全面修订，反映了编程领域业已发生的许多变化。第2 版中介绍的重构列表更加内聚，并用JavaScript 语言重写了代码范例。此外，第2 版中还新增了与函数式编程相关的重构范例，旨在教会读者如何在没有类的环境下展重构。 新版沿袭了第1 版的结构，依次解释什么是重构，为什么要重构，如何通过“坏味道”识别出需要重构的代码，以及如何在实践中成功实施重构（无论用的是什么编程语言）。</li>
+</ol>
+<blockquote>
+<ul>
+<li>理解重构的过程和重构的基本原则；</li>
+<li>快速有效地应用各种重构手法，提升程序的表达力和可维护性；</li>
+<li>识别代码中能指示出需要重构的地方的“坏味道”；</li>
+<li>深了解各种重构手法，每个手法都包含解释、动机、做法和范例4 个部分； </li>
+<li>构建稳固的测试，以支持重构工作的展 </li>
+<li>理解重构过程的权衡取舍以及重构存在的挑战等。 本书凝聚了软件发社区专家多年摸索而获得的宝贵经验，书中所蕴涵的思想和精华，值得反复咀嚼，而且往往能够常读常新。</li>
+</ul>
+</blockquote>
+<hr>
+
+        <h2 id="作者简介"   >
+          <a href="#作者简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#作者简介" class="headerlink" title="作者简介"></a>作者简介</h2>
+      <blockquote>
+<p><code>马丁·福勒（Martin Fowler） </code></p>
+<blockquote>
+<p>软件发大师，ThoughtWorks 科学家。他是一位作家、演说者、咨询师。他致力于改善企业级的软件设计，对设计以及支撑设计的工程实践孜孜以求。他在重构、面向对象分析设计、模式、XP 和UML 等领域都有贡献，著有《重构》《分析模式》《领域特定语言》等经典著作。 译者简介 熊节 在IT 行业已经拼了18年，在金融、零售、政府、电信、制造业等行业的信息化建设方面有着丰富经验，是中国IT业敏捷浪潮的领军人物。熊节拥有利物浦大学MBA学位。 林从羽 ThoughtWorks软件发工程师，曾服务于国内外多家大型企业，致力于帮助团队更快更好地交付可工作的软件。拥抱敏捷精神，TDD爱好者，纯键盘工作者。</p>
+</blockquote>
+</blockquote>
+</div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%9E%84-%E6%94%B9%E5%96%84%E6%97%A2%E6%9C%89%E4%BB%A3%E7%A0%81%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">
+          重构:改善既有代码的设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E8%80%85%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">
+          作者简介</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/bgimg/12.png" alt="avatar"></div><p class="sidebar-ov-author__text">Life is real, life is earnest</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://plus.google.com/" target="_blank" rel="noopener" data-popover="Google" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-google"></i></span></a><a class="sidebar-ov-social-item" href="https://twitter.com/" target="_blank" rel="noopener" data-popover="Twitter" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-twitter"></i></span></a><a class="sidebar-ov-social-item" href="https://youtube.com/" target="_blank" rel="noopener" data-popover="Youtube" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-youtube"></i></span></a><a class="sidebar-ov-social-item" href="https://juejin.im/timeline" target="_blank" rel="noopener" data-popover="social.mai" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">mai</span></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>maimai</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
