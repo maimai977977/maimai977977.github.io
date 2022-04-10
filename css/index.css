@@ -744,7 +744,7 @@ body::after {
   height: 80vh;
 }
 .header-inner--bgcolor {
-  background-color: background-image;
+  background-color: #dcddde;
 }
 .header-inner--height {
   height: 50px !important;
@@ -772,7 +772,7 @@ body::after {
 }
 .header-nav--sticky {
   position: fixed;
-  background-color: background-image;
+  background-color: #dcddde;
   -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
   -o-transform: translateY(-100%);
