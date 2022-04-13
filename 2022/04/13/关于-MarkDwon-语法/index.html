@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.6.2" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.6.2" type="image/png" sizes="32x32"><meta name="description" content="MarkDwon语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于 MarkDwon 语法">
+<meta property="og:url" content="http://maimai977977.github.io/2022/04/13/%E5%85%B3%E4%BA%8E-MarkDwon-%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="偷夢的贼">
+<meta property="og:description" content="MarkDwon语法">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-13T03:14:47.902Z">
+<meta property="article:modified_time" content="2022-04-13T03:17:21.178Z">
+<meta property="article:author" content="maimai">
+<meta property="article:tag" content="Blog">
+<meta name="twitter:card" content="summary"><title>关于 MarkDwon 语法 | 偷夢的贼</title><link ref="canonical" href="http://maimai977977.github.io/2022/04/13/%E5%85%B3%E4%BA%8E-MarkDwon-%E8%AF%AD%E6%B3%95/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.6.2"><script src="/live2d-widget-master/autoload.js"></script><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"40px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.1.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首 页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">日 常</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/archives/"><span class="header-nav-submenu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-submenu-item__text">归 档</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/categories/"><span class="header-nav-submenu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-submenu-item__text">分 类</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/tags/"><span class="header-nav-submenu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-submenu-item__text">标 签</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-users"></i></span><span class="header-nav-menu-item__text">友 链</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/aaa/"><span class="header-nav-submenu-item__icon"><i class="fas fa-male"></i></span><span class="header-nav-submenu-item__text">大 佬</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/bbb/"><span class="header-nav-submenu-item__icon"><i class="fas fa-female"></i></span><span class="header-nav-submenu-item__text">大 佬</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">分 享</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/java/"><span class="header-nav-submenu-item__icon"><i class="fas fa-eye"></i></span><span class="header-nav-submenu-item__text">Java</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/python/"><span class="header-nav-submenu-item__icon"><i class="fas fa-eye"></i></span><span class="header-nav-submenu-item__text">Python</span></a></div></div></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="javascript:;" onclick="return false;"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">书 籍</span></a><div class="header-nav-submenu"><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/chonggou/"><span class="header-nav-submenu-item__icon"><i class="fas fa-rss"></i></span><span class="header-nav-submenu-item__text">重构</span></a></div><div class="header-nav-submenu-item"><a class="header-nav-submenu-item__link" href="/yuanquan/"><span class="header-nav-submenu-item__icon"><i class="fas fa-rss"></i></span><span class="header-nav-submenu-item__text">圆圈正义</span></a></div></div></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner" style="background: url(https://s3.bmp.ovh/imgs/2022/04/08/27fe8fd15741cda9.png) no-repeat center/cover;"><div class="header-banner-info"><div class="header-banner-info__title">偷夢的贼</div><div class="header-banner-info__subtitle">You can't change the world, but you can change yourself</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">关于 MarkDwon 语法</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-04-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-04-13</span></span></div></header><div class="post-body">
+        <h2 id="MarkDwon语法"   >
+          <a href="#MarkDwon语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#MarkDwon语法" class="headerlink" title="MarkDwon语法"></a>MarkDwon语法</h2>
+      <span id="more"></span>
+
+        <h1 id="一级标题"   >
+          <a href="#一级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1>
+      
+        <h2 id="二级标题"   >
+          <a href="#二级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2>
+      
+        <h3 id="三级标题"   >
+          <a href="#三级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3>
+      
+        <h4 id="四级标题"   >
+          <a href="#四级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4>
+      
+        <h5 id="五级标题"   >
+          <a href="#五级标题" class="heading-link"><i class="fas fa-link"></i></a><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5>
+      
+        <h2 id="区块引用"   >
+          <a href="#区块引用" class="heading-link"><i class="fas fa-link"></i></a><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2>
+      <ul>
+<li>在段落的第一行最前面加上”&gt;”<blockquote>
+<p>I don’t mind being alone. I just don’t want to be insignificant.<br>我不介意孤身独行，却不想活得微不足道。</p>
+</blockquote>
+</li>
+<li>区块引用可以嵌套(使用方法”&gt;”&gt;&gt;”)<blockquote>
+<p>I don’t mind being alone. I just don’t want to be insignificant.</p>
+<blockquote>
+<p>我不介意孤身独行，却不想活得微不足道。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>区块引用也可以套用其他MarkDown语法,包括加粗、列表、代码区块等:</li>
+</ul>
+<hr>
+<p><strong>Hello</strong><br>**World<br>*Hello<br>*World</p>
+
+        <h2 id="列表"   >
+          <a href="#列表" class="heading-link"><i class="fas fa-link"></i></a><a href="#列表" class="headerlink" title="列表"></a>列表</h2>
+      <ul>
+<li>MarkDown支持有序列表和无序列表</li>
+<li>无序列表使用星号、加号或是减号作为列表标记，效果一样：<blockquote>
+<p>1无序列表</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>Yes</li>
+<li>No</li>
+</ul>
+<ul>
+<li>Yes</li>
+<li>No<blockquote>
+<p>有序列表则使用数字接着一个英文句点：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>Yes</li>
+<li>No</li>
+<li>Yes</li>
+<li>No</li>
+</ol>
+
+        <h2 id="代码区块"   >
+          <a href="#代码区块" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2>
+      <ul>
+<li>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以<blockquote>
+<p>代码区块<br>  Hello World</p>
+</blockquote>
+</li>
+</ul>
+
+        <h2 id="分割线"   >
+          <a href="#分割线" class="heading-link"><i class="fas fa-link"></i></a><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2>
+      <ul>
+<li>一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西 中间可以插空格</li>
+</ul>
+<hr>
+<hr>
+<hr>
+
+        <h2 id="区段元素"   >
+          <a href="#区段元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h2>
+      <ol>
+<li><strong>链接</strong><br>字段&gt;方块括号后面紧接着圆括号并插入网址链接</li>
+</ol>
+<hr>
+
+        <h2 id="链接备注-（放入链接）"   >
+          <a href="#链接备注-（放入链接）" class="heading-link"><i class="fas fa-link"></i></a><a href="#链接备注-（放入链接）" class="headerlink" title="[链接备注]（放入链接）"></a>[链接备注]（放入链接）</h2>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hkzmai.top/" >MyBlog</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<ol start="2">
+<li><strong>强调作用</strong><blockquote>
+<p>Markdown 使用星号（*）和底线（_）作为标记强调字词的符号</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<ul>
+<li><strong>粗体</strong> <blockquote>
+<p>（** ** 中间填写需要加粗的字段）</p>
+</blockquote>
+</li>
+<li><del>删除线</del><blockquote>
+<p>(~~ ~~ 中间填写需要的字段) </p>
+</blockquote>
+</li>
+<li>空格<blockquote>
+<p>Markdown语法会忽略首行开头的空格，要体现出首行开头空两个的效果，可以使用英文输入状态下的空格空</p>
+<blockquote>
+<pre><code>   Markdown语法会忽略首行开头的空格，要体现出首行开头空两个的效果，可以使用英文输入状态下的空格空
+</code></pre>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<ol start="3">
+<li>行内标记<blockquote>
+<p>行内标记用反引号把它包起来&#96;&#96; （英文输入状态下esc下面那个键）</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>行内标记<blockquote>
+<p>Markdown语法会忽略首行开头<code>空格</code>，要体现出首行开头空两个的效果，可以使用<code>英文</code>输入状态下的空格空</p>
+</blockquote>
+</li>
+</ul>
+<ol start="4">
+<li>插入图片<blockquote>
+<p>![Alt text] (图片链接 “optional title”) []中间不能留空()</p>
+<blockquote>
+<p>Alt text：图片的Alt标签，用来描述图片的关键词，可以不写。最初的本意是当图片因为某种原因不能被显示时而出现的替代文字，后来又被用于SEO，可以方便搜索引擎根据Alt text里面的关键词搜索到图片。 图片链接：可以是图片的本地地址或者是网址。”optional title”：鼠标悬置于图片上会出现的标题文字，可以不写。</p>
+<blockquote>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/280c6a6f2594" >出处：简书清风Python</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>插入本地图片<blockquote>
+<p>![avatar] (&#x2F;home&#x2F;picture&#x2F;1.png)</p>
+<blockquote>
+<p>只需要在基础语法的括号中填入图片的位置路径即可，支持绝对路径和相对路径.不灵活不好分享，本地图片的路径更改或丢失都会造成markdown文件调不出图。</p>
+<blockquote>
+<p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/280c6a6f2594" >出处：简书清风Python</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>插入网络图片<blockquote>
+<p>![avatar] (<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://baidu.com/pic/doge.png" >http://baidu.com/pic/doge.png</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>)</p>
+<blockquote>
+<p>只需要在基础语法的括号中填入图片的网络链接即可，现在已经有很多免费&#x2F;收费图床和方便传图的小工具可选。</p>
+<blockquote>
+<p>将图片存在网络服务器上，非常依赖网络。<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/280c6a6f2594" >出处：简书清风Python</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<hr>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://maimai977977.github.io/tags/Blog/">Blog</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/04/09/Github-hexo-Blog/"><span class="paginator-prev__text">Github + hexo = Blog</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MarkDwon%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">
+          MarkDwon语法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">
+          一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">
+          二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">
+          三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.</span> <span class="toc-text">
+          四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">
+          五级标题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">
+          区块引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">
+          列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">
+          代码区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="toc-number">5.</span> <span class="toc-text">
+          分割线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E6%AE%B5%E5%85%83%E7%B4%A0"><span class="toc-number">6.</span> <span class="toc-text">
+          区段元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%A4%87%E6%B3%A8-%EF%BC%88%E6%94%BE%E5%85%A5%E9%93%BE%E6%8E%A5%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">
+          [链接备注]（放入链接）</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/bgimg/12.png" alt="avatar"></div><p class="sidebar-ov-author__text">Life is real, life is earnest</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/maimai977977/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://hkzmai.top/" target="_blank" rel="noopener" data-popover="social.mai" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">Blog</span></a><a class="sidebar-ov-social-item" href="1848****076" target="_blank" rel="noopener" data-popover="Telegram" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="94****711" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>maimai</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.6.2"></script><script src="/js/stun-boot.js?v=2.6.2"></script><script src="/js/scroll.js?v=2.6.2"></script><script src="/js/header.js?v=2.6.2"></script><script src="/js/sidebar.js?v=2.6.2"></script></body></html>
