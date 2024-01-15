@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="/images/sdan.ico">
+  
+  <title>js内置对象 | MaiMai</title>
+  
+  <meta name="author" content="MaiMai" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="学习" />
+  
+  <meta name="description" content="内置对象 js中的对象分为3种：自定义对象、内置对象、浏览器对象 前面的两种对象时js基础内容 属于ecmascript 第三个浏览器对象属于我们js独有的 我们js api讲解  查文档 MDN  MDN  Math对象 Math 是一个内置对象，它拥有一些数学常数属性和数学函数方法。Math 不是一个函数对象    123456789101112131415161718192021&lt;sc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js内置对象">
+<meta property="og:url" content="https://maimai977977.github.io/2022/06/01/js%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1-note/index.html">
+<meta property="og:site_name" content="MaiMai">
+<meta property="og:description" content="内置对象 js中的对象分为3种：自定义对象、内置对象、浏览器对象 前面的两种对象时js基础内容 属于ecmascript 第三个浏览器对象属于我们js独有的 我们js api讲解  查文档 MDN  MDN  Math对象 Math 是一个内置对象，它拥有一些数学常数属性和数学函数方法。Math 不是一个函数对象    123456789101112131415161718192021&lt;sc">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://maimai977977.github.io/images/sdan.ico">
+<meta property="article:published_time" content="2022-06-01T05:17:42.223Z">
+<meta property="article:modified_time" content="2022-06-01T05:18:11.542Z">
+<meta property="article:author" content="MaiMai">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maimai977977.github.io/images/sdan.ico">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+
+     
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
+    <script src="/js/kr-dark.min.js"></script>
+  
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
+  
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></script>
+  <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/aplayer@1.10.1/dist/APlayer.min.css"></script>
+  
+  
+    <link rel="stylesheet" href="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"></script>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('/images/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('/images/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li>
+                                            
+                                                <a href="/">
+                                            
+                                                
+                                                    <i class="fa fa-home"></i>
+                                                
+                                                首页
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/archives/">
+                                            
+                                                
+                                                    <i class="fa fa-columns"></i>
+                                                
+                                                档案馆
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/friends/">
+                                            
+                                                
+                                                    <i class="fa fa-paw"></i>
+                                                
+                                                好伙伴
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-cloud"></i>
+                                                
+                                                Project
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="http://maimai977977.ysepan.com/">
+                                                                
+                                                                    <i class="fa fa-balance-scale"></i>
+                                                                
+                                                                Store
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="http://gtp.maimaio.cn/">
+                                                                
+                                                                    <i class="fa fa-paint-brush"></i>
+                                                                
+                                                                GTP
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://mailove.eu.org/">
+                                                                
+                                                                    <i class="fa fa-sticky-note"></i>
+                                                                
+                                                                Note
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a target="_blank" rel="noopener" href="https://flowus.cn/maimai/share/a48f1b1d-ef6a-44ab-b5b8-2e0e303ad2c1/">
+                                                                
+                                                                    <i class="fa fa-strikethrough"></i>
+                                                                
+                                                                息流
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/Contactme/">
+                                            
+                                                
+                                                    <i class="fa fa-send"></i>
+                                                
+                                                关于本站
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a>
+                                            
+                                                
+                                                    <i class="fa fa-navicon"></i>
+                                                
+                                                DAC导航
+                                            </a>
+                                            
+                                                <ul class="sub-menu">
+                                                    
+                                                        <li>
+                                                            <a href="/dac/">
+                                                                
+                                                                    <i class="fa fa-subscript"></i>
+                                                                
+                                                                DAC导航
+                                                            </a>
+                                                        </li>
+                                                    
+                                                        <li>
+                                                            <a href="/2023/06/11/dac%E5%AF%BC%E8%88%AA%E4%BB%8B%E7%BB%8D/">
+                                                                
+                                                                    <i class="fa fa-superscript"></i>
+                                                                
+                                                                导航介绍
+                                                            </a>
+                                                        </li>
+                                                    
+                                                </ul>
+                                            
+                                        </li>
+                                    
+                                        <li>
+                                            
+                                                <a href="/GraduateStuden/">
+                                            
+                                                
+                                                    <i class="fa fa-bullhorn"></i>
+                                                
+                                                一研为定
+                                            </a>
+                                            
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">MaiMai</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>MaiMai</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://maimai977977.github.io/2022/06/01/js%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1-note/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">js内置对象</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2022-06-01T05:17:42.223Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2022-06-01</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">MaiMai</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            ~7.62K
+                        
+                        字
+                    </li>
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1654060691542"></time> 前，其中的内容可能需要更新。</p></div>
+            </div>
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><ul>
+<li>js中的对象分为3种：自定义对象、内置对象、浏览器对象</li>
+<li>前面的两种对象时js基础内容 属于ecmascript 第三个浏览器对象属于我们js独有的 我们js api讲解</li>
+</ul>
+<h2 id="查文档"><a href="#查文档" class="headerlink" title="查文档"></a>查文档</h2><ol>
+<li>MDN  <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/">MDN</a></li>
+</ol>
+<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><blockquote>
+<p>Math 是一个内置对象，它拥有一些数学常数属性和数学函数方法。Math 不是一个函数对象</p>
+</blockquote>
+<br/>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 1. 绝对值方法</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(<span class="number">1</span>));  <span class="comment">//1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(-<span class="number">1</span>));  <span class="comment">///1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(<span class="string">&#x27;-1&#x27;</span>)); <span class="comment">//1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(<span class="string">&#x27;pink&#x27;</span>)); <span class="comment">//NaN</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 三个取整方法</span></span><br><span class="line">        <span class="comment">// (1) Math.floor() 向下取整 往最小了 取值</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.2</span>));</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1.8</span>));</span><br><span class="line">        <span class="comment">// (2) Math.ceil() 向上取整  往最大了 取值</span></span><br><span class="line"></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.2</span>));</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">1.9</span>));</span><br><span class="line">        <span class="comment">// (3)  Math.round() 四舍五入 其他数字都是四舍五入  但是 .5特殊 它往大了取</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.4</span>));</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">1.8</span>));</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(-<span class="number">1.2</span>));</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">round</span>(-<span class="number">1.5</span>));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>());</span><br><span class="line">      <span class="comment">// Math.random()返回的是 一个随机的小数  [0,1)</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 得到2个数之间的随机数</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">function</span> <span class="title function_">getRandom</span>(<span class="params">min, max</span>) &#123;</span><br><span class="line">          min = <span class="title class_">Math</span>.<span class="title function_">ceil</span>(min);</span><br><span class="line">          max = <span class="title class_">Math</span>.<span class="title function_">floor</span>(max);</span><br><span class="line">          <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * (max - min)) + min; <span class="comment">//不含最大值，含最小值</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">getRandom</span>(<span class="number">1</span>,<span class="number">10</span>));</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 随机点名</span></span><br><span class="line">      <span class="keyword">var</span> arr = [<span class="string">&#x27;小花&#x27;</span>,<span class="string">&#x27;小明&#x27;</span>,<span class="string">&#x27;小欧&#x27;</span>];</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="title function_">getRandom</span>(<span class="number">0</span>,arr.<span class="property">length</span>-<span class="number">1</span>)]);</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><blockquote>
+<p>Date概述</p>
+<ul>
+<li>Date对象和Math对象不一样， 它是一个构造函数，所以我们需要实例化后才能使用</li>
+<li>Date实例用来处理日期和时间</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">       <span class="comment">// Date() 日期对象  是一个构造函数  必须用new 来调试我们的日期对象</span></span><br><span class="line">       <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(date);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">2019</span>,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(date1);</span><br><span class="line">       <span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">2019</span>-<span class="number">10</span>-<span class="number">1</span>);</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(date2);</span><br><span class="line">   &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">conutDown</span>(<span class="params">time</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> nowTime = + <span class="keyword">new</span> <span class="title class_">Date</span>();<span class="comment">//返回的是当前时间总的毫秒数</span></span><br><span class="line">        <span class="keyword">var</span> inputTime = +<span class="keyword">new</span> <span class="title class_">Date</span>(time);<span class="comment">// 返回的是用户输入时间总的毫秒数</span></span><br><span class="line">        <span class="keyword">var</span> times = (inputTime - nowTime)/<span class="number">1000</span>;<span class="comment">// times 是剩余时间总的秒数</span></span><br><span class="line"></span><br><span class="line">        d = <span class="built_in">parseInt</span>(times/<span class="number">60</span>/<span class="number">60</span>/<span class="number">24</span>); <span class="comment">//计算天数</span></span><br><span class="line">        d = d&lt;<span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> + d : d;</span><br><span class="line">        h = <span class="built_in">parseInt</span>(times/<span class="number">60</span>/<span class="number">60</span>%<span class="number">24</span>); <span class="comment">//计算小时</span></span><br><span class="line">        h = h&lt;<span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> + h : h;</span><br><span class="line">        m = <span class="built_in">parseInt</span>(times / <span class="number">60</span> %<span class="number">60</span>); <span class="comment">//计算分钟</span></span><br><span class="line">        m = m&lt;<span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> + m : m;</span><br><span class="line">        s = <span class="built_in">parseInt</span>(times%<span class="number">60</span>); <span class="comment">//计算当前秒数</span></span><br><span class="line">        s = s&lt;<span class="number">10</span> ? <span class="string">&#x27;0&#x27;</span> + s : s;</span><br><span class="line">        <span class="keyword">return</span> d +<span class="string">&#x27;天&#x27;</span>+ h + <span class="string">&#x27;时&#x27;</span> + m + <span class="string">&#x27;分&#x27;</span> + s + <span class="string">&#x27;秒&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">conutDown</span>(<span class="string">&#x27;2022-5-7 18:00:00&#x27;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> nowTimes = <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(nowTimes);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><ol>
+<li>利用数组字面量</li>
+<li>利用new Array（）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 创建数组的两种方式</span></span><br><span class="line">        <span class="comment">// 1.利用数组字面量</span></span><br><span class="line">        <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">54</span>,<span class="number">3</span>]</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  利用new Array()</span></span><br><span class="line">    <span class="keyword">var</span> arr1 = <span class="keyword">new</span>  <span class="title class_">Array</span>()  <span class="comment">//创建了一个空的数组  </span></span><br><span class="line">    <span class="keyword">var</span> arr2= <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">4</span>)  <span class="comment">//创建一个 长度为4的数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr3 = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">3</span>,<span class="number">65</span>,<span class="number">65</span>,<span class="number">65</span>)   <span class="comment">//等价于[3,65,65,65] 这样写表示里面有2个数组元素 是3,65,65,65</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr1,arr2,arr3);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<ol start="3">
+<li>检查是否为数组的方法</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">//翻转数组</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">reverse</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> newArr = [];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = arr.<span class="property">length</span> -<span class="number">1</span> ;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">                newArr[newArr.<span class="property">length</span>] = arr[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newArr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr =  <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">1</span>,<span class="number">54</span>,<span class="number">46</span>,<span class="number">65</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">reverse</span>(arr));</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>;</span><br><span class="line">    obj.<span class="property">name</span> = <span class="string">&#x27;dfhak&#x27;</span>;</span><br><span class="line">    obj.<span class="property">sex</span> = <span class="string">&#x27;男&#x27;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line">     </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//1.检查是否为数组   instanceof</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr <span class="keyword">instanceof</span> <span class="title class_">Array</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(obj <span class="keyword">instanceof</span> <span class="title class_">Array</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. Array.isArray(参数)</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">isArray</span>(arr));</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">isArray</span>(obj));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<ol start="4">
+<li>增加删除数组元素的方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">//添加数组元素的方法</span></span><br><span class="line">    <span class="comment">// push() 在我们数组的末尾添加一个或者多个数组元素  push 推</span></span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">34</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">35</span>,<span class="number">5</span>];</span><br><span class="line">    arr.<span class="title function_">push</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">99</span>,<span class="number">9</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);  <span class="comment">//等价于console.log(arr.push((1,1,1,1,1,1))</span></span><br><span class="line">    <span class="comment">// 1. push 是可以给数组追加新的元素</span></span><br><span class="line">    <span class="comment">// 2. push（）参数直接写  数组元素就可以</span></span><br><span class="line">    <span class="comment">// 3. push 完毕之后  返回的 结果是  欣数组的长度</span></span><br><span class="line">    <span class="comment">// 4. 原数组也会发生变化</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//unshift()</span></span><br><span class="line">    <span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">34</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">35</span>,<span class="number">5</span>];</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr1.<span class="title function_">unshift</span>(<span class="string">&#x27;re&#x27;</span>,<span class="string">&#x27;3434&#x27;</span>));</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr1);</span><br><span class="line">    <span class="comment">// unshift是可以给数组前面追加新的元素</span></span><br><span class="line">    <span class="comment">// unshift()参数直接写  数组元素就可以了</span></span><br><span class="line">    <span class="comment">// unshift 完毕之后 返回的结果是  新数组的长度</span></span><br><span class="line">    <span class="comment">// 原数组也会发生变化</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// pop() 可以删除数组的最后一个元素  一次只能删除一个</span></span><br><span class="line">    <span class="comment">// pop()没有参数</span></span><br><span class="line">    <span class="comment">// pop完毕之后 返回的结果是 删除的那个元素</span></span><br><span class="line">    <span class="comment">// 元素数组也会发生变化</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">pop</span>());</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     <span class="comment">// shift 可以删除数组的第一个元素  </span></span><br><span class="line">    <span class="comment">// shift()没有参数</span></span><br><span class="line">    <span class="comment">// shift完毕之后 返回的结果是 删除的那个元素</span></span><br><span class="line">    <span class="comment">// 元素数组也会发生变化</span></span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr1.<span class="title function_">shift</span>());</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<br/>
+
+<ol start="5">
+<li><p>数组排序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 数组排序</span></span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">43</span>,<span class="number">5</span>,<span class="number">46</span>,<span class="number">57</span>,<span class="number">687</span>,<span class="number">98</span>,<span class="number">0</span>,<span class="number">7</span>];</span><br><span class="line">        <span class="comment">// 翻转数组</span></span><br><span class="line">    arr.<span class="title function_">reverse</span>()</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 冒泡排序</span></span><br><span class="line">    arr.<span class="title function_">sort</span>(<span class="keyword">function</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">        <span class="comment">//   return a-b; // 正序</span></span><br><span class="line">          <span class="keyword">return</span> b-a; <span class="comment">//倒叙</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组索引方法</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回数组元素索引号的方法 indexOf(数组元素)  作用是返回该数组元素的索引号 从前面开始查找</span></span><br><span class="line">    <span class="comment">// 它只返回一个满足条件的索引号</span></span><br><span class="line">    <span class="comment">// 如果找不到元素 则返回-1</span></span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">9</span>];</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">indexOf</span>(<span class="number">7</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回数组元素索引号的方法 lastIndexOf(数组元素) 作用是返回该数组元素的索引号 从后面开始查找</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">lastIndexOf</span>(<span class="number">7</span>));</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat()</td>
+<td>链接两个或多个数组，不影响原数组</td>
+<td>返回一个新的数组</td>
+</tr>
+<tr>
+<td>slice()</td>
+<td>数组截取slice(begin,end)</td>
+<td>返回被截取项目的新数组</td>
+</tr>
+<tr>
+<td>splice()</td>
+<td>数组删除splice(第几个开始，要删除个数)</td>
+<td>返回被删除项目的新数组  注意，这个会影响原数组</td>
+</tr>
+</tbody></table>
+<h2 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h2><ol>
+<li>基本包装类型</li>
+</ol>
+<p>为了方便操作基本数据类型，js还提供了三个特殊的引用类型，String，Number，Boolean</p>
+<p>基本包装类型就是把简单的数据类型包装成为复杂的数据类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">     <span class="comment">// 基本包装类型</span></span><br><span class="line">     <span class="keyword">var</span> str = <span class="string">&#x27;study&#x27;</span>;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="property">length</span>);</span><br><span class="line"></span><br><span class="line">     <span class="comment">// 对象  才有 属性 和方法  复杂数据类型才有属性和方法</span></span><br><span class="line"></span><br><span class="line">     <span class="comment">// 基本包装类型，  就是把简单数据类型  包装成为了复杂数据类型</span></span><br><span class="line">         <span class="comment">// 把简单数据类型包装为复杂数据类型</span></span><br><span class="line">         <span class="keyword">var</span> temp = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&#x27;study&#x27;</span>);</span><br><span class="line">             <span class="comment">// 把临时变量的值 给str</span></span><br><span class="line">         str= temp;</span><br><span class="line">         <span class="comment">// 销毁这个临时变量</span></span><br><span class="line">         temp = <span class="literal">null</span>;</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(str);</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>字符串不可变</li>
+</ol>
+<p>指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变了，内存中开辟了新的空间</p>
+<ol start="3">
+<li><p>根据字符返回位置</p>
+<p>字符串所有的方法，都不会修改字符串本身（字符串是不可变的），操作完成会返回一个新的字符串</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>indexOf(‘要查找的字符’,开始的位置)</td>
+<td>返回指定内容在元字符串中的位置 如果找不到就返回-1，开始的位置是index的索引号</td>
+</tr>
+<tr>
+<td>lastIndexOf（）</td>
+<td>从后往前找，只找第一个匹配的</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 字符串对象  根据字符返回位置 str.indexOf(&#x27;要查找的字符&#x27;,[起始的位置])</span></span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">&#x27;我自去横刀向天笑，去留肝胆两昆仑&#x27;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">indexOf</span>(<span class="string">&#x27;去&#x27;</span>));</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">indexOf</span>(<span class="string">&#x27;去&#x27;</span> ,<span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">lastIndexOf</span>(<span class="string">&#x27;去&#x27;</span>));</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>根据位置返回字符（*）</li>
+</ol>
+<br/>
+
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+<th>使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>charAt(index)</td>
+<td>返回指定位置的字符(index 字符串的索引号)</td>
+<td>str.charAt(0)</td>
+</tr>
+<tr>
+<td>charCodeAt(index)</td>
+<td>获取指定位置处字符的ASVLL码(index索引号)</td>
+<td>str.charCodeAt(0)</td>
+</tr>
+<tr>
+<td>str[index]</td>
+<td>获取指定位置处字符</td>
+<td>HTML5，IE8+支持和charAt()等效</td>
+</tr>
+</tbody></table>
+<h3 id="字符串操作方法"><a href="#字符串操作方法" class="headerlink" title="字符串操作方法"></a>字符串操作方法</h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat(str1,str2,str3)</td>
+<td>concat()方法用于连续两个或者多个字符串。拼接字符串，等效于+ + 更常用</td>
+</tr>
+<tr>
+<td>substr(start,length)</td>
+<td>从start位置开始（索引号），length取的个数重点记住这个</td>
+</tr>
+<tr>
+<td>slice(start,end)</td>
+<td>从start位置开始 截取到end位置 end取不到（他们两都是索引号）</td>
+</tr>
+<tr>
+<td>substring(start,end)</td>
+<td>从start位置开始，截取到end位置end取不到 基本和slice 相同但是不接受负值</td>
+</tr>
+</tbody></table>
+<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>replace()</td>
+<td>替换字符replace（’被替换的字符’,’替换为的字符’）他只会替换第一个字符</td>
+</tr>
+<tr>
+<td>split()</td>
+<td>字符串转换为数组split(‘分隔符’)</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 替换字符replace（&#x27;被替换的字符&#x27;,&#x27;替换为的字符&#x27;）他只会替换第一个字符</span></span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">&#x27;helloworld&#x27;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">replace</span>(<span class="string">&#x27;he&#x27;</span>,<span class="string">&#x27;ss&#x27;</span>));</span><br><span class="line">    <span class="keyword">var</span> str1 = <span class="string">&#x27;qwertyuqwertyqwerty&#x27;</span>;</span><br><span class="line">    <span class="comment">//将str1 中所有的q 转换为 *</span></span><br><span class="line">    <span class="keyword">while</span>(str1.<span class="title function_">indexOf</span>(<span class="string">&#x27;q&#x27;</span>) !==-<span class="number">1</span>)&#123;</span><br><span class="line">        str1 = str1.<span class="title function_">replace</span>(<span class="string">&#x27;q&#x27;</span>,<span class="string">&#x27;*&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str1);</span><br><span class="line">    <span class="comment">// 字符串转换为数组split(&#x27;分隔符&#x27;)</span></span><br><span class="line">    <span class="keyword">var</span> str2 = <span class="string">&quot;&#x27;red&#x27;,&#x27;blue&#x27;,&#x27;black&#x27;&quot;</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str2.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> str3 = <span class="string">&quot;red&amp;blue&amp;black&quot;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(str3.<span class="title function_">split</span>(<span class="string">&#x27;&amp;&#x27;</span>));</span><br><span class="line">    <span class="comment">// join将数组转换为字符串</span></span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">join</span>());</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</div>
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5 itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://maimai977977.github.io/2022/06/01/js%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1-note/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://maimai977977.github.io/2022/06/01/js%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1-note/";
+            const title         = "「js内置对象」";
+            const excerpt       = `内置对象
+js中的对象分为3种：自定义对象、内置对象、浏览器对象
+前面的两种对象时js基础内容 属于ecmascript 第三个浏览器对象属于我们js独有的 我们js api讲解
+
+查文档
+MDN  MDN
+
+Math对象
+Math ...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2022-06-01T05:18:11.542Z" itemprop="dateModified">最后编辑：2022-06-01</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" IFrame" href="/2022/05/23/IFrame-iframe/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" css命名规则" href="/2022/06/01/css命名规则-css命名规则/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/images/avatar.webp" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                75
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                15
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                8
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Css/">Css</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DAC/">DAC</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Html/">Html</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OpenWrt/">OpenWrt</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Today/">Today</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/axutongxue/">axutongxue</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/software/">software</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vuepress/">vuepress</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/zzcs/">zzcs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%88%91%E4%B8%8D%E6%98%AF%E7%9B%90%E7%A5%9E/">我不是盐神</a><span class="category-list-count">20</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/netlify/" style="font-size: 0.6em;">netlify</a> <a href="/tags/%E4%B8%BB%E9%A2%98/" style="font-size: 0.6em;">主题</a> <a href="/tags/%E5%88%86%E4%BA%AB/" style="font-size: 0.8em;">分享</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 0.7em;">学习</a> <a href="/tags/%E5%BB%BA%E7%AB%99/" style="font-size: 0.6em;">建站</a> <a href="/tags/%E6%8A%98%E8%85%BE/" style="font-size: 0.6em;">折腾</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 0.6em;">日常</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 0.6em;">阅读</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2024/01/15/%E9%BB%91%E7%BE%A4%E6%99%96%E6%8A%98%E8%85%BE/"><i class="fa  fa-book"></i> 黑群晖折腾</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/08/28/RackNerd%EF%BC%9A%E7%BE%8E%E5%9B%BD%E4%BE%BF%E5%AE%9CVPS/"><i class="fa  fa-book"></i> RackNerd美国便宜VPS</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/06/19/oppor9%E6%90%9E%E6%9C%BA/"><i class="fa  fa-book"></i> oppor9搞机</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/06/15/%E5%85%B3%E4%BA%8E%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"><i class="fa  fa-book"></i> 关于搭建静态博客</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2023/06/13/%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB3/"><i class="fa  fa-book"></i> 常用知识汇总3</a>
+            
+          
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        <!-- Keep for compatibility -->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- New links -->
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 MaiMai 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <!-- <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by MaiMai.</li>
+                        </div> -->
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            
+                        </div>
+                        <div>
+                            <li><a href="https://beian.miit.gov.cn" rel="external nofollow" target="_blank">萌5201314</a></li>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="/vendors/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+<script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="/vendors/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="/vendors/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="7307144945"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="/vendors/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
